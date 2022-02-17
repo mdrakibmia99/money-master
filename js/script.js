@@ -79,28 +79,34 @@ document.getElementById("save-btn").addEventListener("click",function(){
     const numericBalance=getFloatVlue(Balance);
     const percentageInputValue=getInputValue("save-money-input");
     const totalIncomeAmount=getInputValue("total-income");
-    const percentageAmount=totalIncomeAmount *(percentageInputValue/100);
+    const percentageAmount=totalIncomeAmount * (percentageInputValue/100);
     const remainBalance=numericBalance-percentageAmount;
   
-
-    if((percentageInputValue>0) && (percentageInputValue<=100)){
+  if( numericBalance==0){
+    setValue("0","saving-money");
+    setValue("0","remain-balance");
+    setValue("Expense over lap!!","save-btn-error");
+  } else if(numericBalance>=percentageAmount){
         
-        if(numericBalance>=percentageAmount){
+        if((percentageInputValue>0) && (percentageInputValue<=100)){
+        
             setValue(percentageAmount,"saving-money");
             setValue(remainBalance,"remain-balance");
             setValue("","save-btn-error");
-
+    
+    
         }else{
             setValue("0","saving-money");
             setValue("0","remain-balance");
-            setValue("Expense over lap!!","save-btn-error");
-
+            setValue("Please Enter Number 1 to 100","save-btn-error");
         }
-
 
     }else{
         setValue("0","saving-money");
         setValue("0","remain-balance");
-        setValue("Please Enter Number 1 to 100","save-btn-error");
+        setValue("Expense over lap!!","save-btn-error");
+
     }
+
+   
 })
