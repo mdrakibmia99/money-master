@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--  -->
+    <script src="https://kit.fontawesome.com/7b2866d1be.js" crossorigin="anonymous"></script>
     <title>Md Rakib Mia || Assignment 5</title>
 
     <!-- fav icon -->
@@ -14,8 +16,7 @@
   integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
  
-<!-- font awsome   -->
-<!-- <script src="https://kit.fontawesome.com/7b2866d1be.js" crossorigin="anonymous"></script> -->
+
 
 
 
@@ -25,12 +26,12 @@
 <body>
     
     <div class="container">
-        <h2 class="text-center">Money Money </h2>
+        <h2 class="text-center">Money Money <i class="fa-solid fa-hand-holding-dollar"></i> </h2>
      
         <div class="row">
           <div class="col-lg-6 d-flex align-items-center">
               <div class="row ">
-               <img class="img-fluid " src="./images/moneycalculate.jpg"  height="600px" alt="">
+               <img class="img-fluid " src="./images/moneycalculate.jpg"   alt="">
               </div>
             
           </div>
@@ -38,20 +39,21 @@
             <div class="row my-4">
                <div class="text-center">
                 <h3 class="" >Income</h3>
-                <label for="" class="">Income:</label> <input type="text" placeholder="Total Inocme" > <br>
+                <label for="" class="">Income:</label> <input id="total-income" type="text" placeholder="Total Inocme" > <br>
                 <h3>Expenses</h3>
-                <label for="" class="mx-2">  Food: </label> <input type="text"  placeholder="food cost"> <br>
-                <label for="" class="mx-2">  Rent:</label> <input type="text"  placeholder="Rent Amount"> <br>
-                <label for="" class="">Clothes:</label> <input type="text"  placeholder="Clothes Cost"> <br>
-                <button class="btn btn-primary my-lg-3 calculate-btn">Calculate</button>
-                  <h3>Total Expenses: <span> 5500</span> </h3>
-                  <h3>Balance:  <span> 4500</span> </h3>
+                <label for="" class="mx-2">  Food: </label> <input id="food-cost" type="text"  placeholder="food cost"> <br>
+                <label for="" class="mx-2">  Rent:</label> <input id="rent-amount" type="text"  placeholder="Rent Amount"> <br>
+                <label for="" class="">Clothes:</label> <input id="clothes-cost" type="text"  placeholder="Clothes Cost"> <br>
+                <button id="calculate-btn" class="btn btn-primary my-lg-3 ">Calculate</button>
+                <h2 id="calculate-error"> </h2>
+                  <h3>Total Expenses: <span id="total-expenses"> </span> </h3>
+                  <h3>Balance:  <span id="toal-balance" > </span> </h3>
 
-                  <label for="">Save:</label> <input type="text"  placeholder="Save your Money"> 
-                  <span>%</span> <button class="btn btn-primary py-lg-2 px-lg-3 my-lg-4 calculate-btn">Save  <i class="fa-solid fa-sack-dollar"></i> </button>
+                  <label for="">Save:</label> <input id="save-money-input" type="text"  placeholder="Save your Money"> 
+                  <span>%</span> <button id="save-btn" class="btn btn-primary py-lg-2 px-lg-3 my-lg-4 calculate-btn">Save  <i class="fa-solid fa-sack-dollar"></i> </button>
 
-                  <h3>Saving Amount: <span> 2000</span> </h3>
-                  <h3>Remaining Balance:  <span> 2500</span> </h3>
+                  <h3>Saving Amount: <span id="saving-money" > 2000</span> </h3>
+                  <h3>Remaining Balance:  <span id="remain-balance" > 2500</span> </h3>
                   
                </div>
 
