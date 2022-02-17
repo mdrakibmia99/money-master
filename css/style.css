@@ -14,9 +14,11 @@ h1{
 h3{
     font-size:21px;
 }
+
 label{
     line-height: 60px;
 }
+
 #calculate-error,#save-btn-error{
     color: red;
 }

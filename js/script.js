@@ -1,23 +1,49 @@
+// This funciton for get Float Number
 function getFloatVlue(inputValue){
     const inputNumberValue=parseFloat(inputValue);
     return inputNumberValue;
 }
 
+
+
+// This funciton for get into id value and convert it float value
 function getInputValue(inputId){
 
     const inputValueSelect=document.getElementById(inputId).value;
-    const Numbervalue=getFloatVlue(inputValueSelect);
-    return Numbervalue;
+    
+    if(isNaN(inputValueSelect)){
+        return -1;
+    }else{
+        const Numbervalue=getFloatVlue(inputValueSelect);
+        return Numbervalue;
+    }
+    
 }
+
+
+
+// This function for set  inner value
 function setValue(setValue,setId){
     document.getElementById(setId).innerText=setValue;
 }
 
+
+
+
+
+// This funciton for calculation total expenses and balance
 document.getElementById("calculate-btn").addEventListener("click", function(e) {
     const totalIncome=getInputValue("total-income");
     const foodCostValue=getInputValue("food-cost");
     const rentAmountValue=getInputValue("rent-amount");
     const clothesAmountValue=getInputValue("clothes-cost");
+    if(totalIncome<1 || foodCostValue<0 || rentAmountValue<0 || clothesAmountValue<0){
+        setValue("0","total-expenses");
+        setValue("0","toal-balance");
+        setValue("String or Negative number Not allow!!","calculate-error");
+
+    }else{
+    
     const totalCost=foodCostValue+rentAmountValue+clothesAmountValue;
     const currentbalance=totalIncome-totalCost;
      if((totalIncome<totalCost)){
@@ -30,26 +56,24 @@ document.getElementById("calculate-btn").addEventListener("click", function(e) {
         setValue("0","toal-balance");
         setValue("Please Enter valid income value","calculate-error");
 
-    }
-    else if(  foodCostValue>=0 && rentAmountValue>=0  && clothesAmountValue>=0){
+    
+     }else if(  foodCostValue>=0 && rentAmountValue>=0  && clothesAmountValue>=0){
         setValue(totalCost,"total-expenses");
         setValue(currentbalance,"toal-balance");
         setValue("","calculate-error");
     }else{
         setValue("0","total-expenses");
         setValue("0","toal-balance");
-        setValue("Enter valid Expenses value","calculate-error");
+        setValue("Plese Enter valid Expenses value!!","calculate-error");
+    } 
     }
     
-    
-
 })
 
-// function getInnerTexValue(innertextId){
-//   const textValue=document.getElementById(innertextId).innerText;
-//   const numberTextValue=getFloatVlue(textValue);
-//   return numberTextValue;
-// }
+
+
+
+// This funciton for calculation saving amount and remaining ammount
 document.getElementById("save-btn").addEventListener("click",function(){
     const Balance=document.getElementById("toal-balance").innerText;
     const numericBalance=getFloatVlue(Balance);
@@ -77,6 +101,6 @@ document.getElementById("save-btn").addEventListener("click",function(){
     }else{
         setValue("0","saving-money");
         setValue("0","remain-balance");
-        setValue(" Enter Number 1 to 100","save-btn-error");
+        setValue("Please Enter Number 1 to 100","save-btn-error");
     }
 })
