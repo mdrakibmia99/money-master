@@ -17,6 +17,6 @@ h3{
 label{
     line-height: 60px;
 }
-#calculate-error{
+#calculate-error,#save-btn-error{
     color: red;
 }
