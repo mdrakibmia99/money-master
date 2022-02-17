@@ -1,0 +1,19 @@
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #CAD5E2;
+
+
+}
+h1{
+    color: red;
+}
+h3{
+    font-size:21px;
+}
+label{
+    line-height: 60px;
+}
